@@ -147,8 +147,23 @@ const periodicTable = [
 // Testing functions from index.js files
 // 
 
-for (let i = 0; i<10; i++){
-  if (periodicTable.atomicNumber = i) {
-    alert(periodicTable.i[periodicTable.symbol])
+// for (let i = 0; i<10; i++){
+//   if (periodicTable.atomicNumber === i) {
+//     alert((periodicTable[i])["symbol"])
+// }
+// }
+
+var enter = document.getElementById("submit")
+
+if (document.getElementById("submit") == 1) {
+  alert("you are doing it right")
 }
+
+function z() {
+  var a=document.getElementById("test");
+  if((a.value=="an apple")||(a.value=="apple")) {
+    document.getElementById('err').innerHTML= 'correct';
+  } else {
+    document.getElementById('err').innerHTML= 'wrong';
+  }
 }
