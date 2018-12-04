@@ -147,23 +147,45 @@ const periodicTable = [
 // Testing functions from index.js files
 // 
 
+
+// let ((periodicTable[]), "atomicNumber") = i
 // for (let i = 0; i<10; i++){
 //   if (periodicTable.atomicNumber === i) {
 //     alert((periodicTable[i])["symbol"])
 // }
 // }
 
-var enter = document.getElementById("submit")
 
-if (document.getElementById("submit") == 1) {
-  alert("you are doing it right")
+// 
+// how to do a static check
+// 
+
+// function check() {
+//   var a=document.getElementById("check");
+//   if((a.value==((periodicTable[i])["name"]))) {
+//     document.getElementById('err').innerHTML= "Correct";
+//   } else {
+//     document.getElementById('err').innerHTML= "Wrong";
+//   }
+
+// 
+// How to get part of the array
+// 
+const easyPart = []
+for (i = 0; i < 25 ; i++) {
+  easyPart.push(periodicTable[i]);
 }
 
-function z() {
-  var a=document.getElementById("test");
-  if((a.value=="an apple")||(a.value=="apple")) {
-    document.getElementById('err').innerHTML= 'correct';
-  } else {
-    document.getElementById('err').innerHTML= 'wrong';
-  }
+function init() {
+  showSymbol();
+}
+
+const currentSymbol = document.getElementById("#current-symbol");
+
+// Pick and show random words
+function showSymbol(symbols) {
+  //  Generate random array index
+  let randIndex = Math.floor(Math.random() * easyPart.length);
+  // Output random symbol
+  console.log((easyPart[randIndex]["symbol"]));
 }
