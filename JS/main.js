@@ -172,7 +172,7 @@ for (i = 0; i < 25 ; i++) {
 }
 
 // Globals 
-let time = 5;
+let time = 10;
 let score = 0;
 let isPlaying;
 
@@ -189,23 +189,23 @@ function init() {
   // Load words from array
   showSymbol();
   // Start matching symbols and words
-  wordInput.addEventListener("input", startMatch)
+  wordInput.addEventListener("input", startMatch);
   // Call countdown every second
-  setInterval(timer, 1000)
+  setInterval(timer, 1000);
   // Check if game is still being played
-  setInterval(checkStatus, 50)
+  setInterval(checkStatus, 50);
 }
 
 // Start matching
 function startMatch() {
   if(matchElement()) {
-    console.log(Match)
+    console.log("Match")
   }
 }
 
 // Match current symbol to word input
 function matchElement() {
-  if(wordInput.value === currentSymbol.value) {
+  if(wordInput.value === currentSymbol.innerHTML) {
     message.innerHTML = "Correct";
     return true;
   } else {
