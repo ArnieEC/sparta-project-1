@@ -1,3 +1,5 @@
+window.addEventListener("load", init)
+
 const periodicTable = [
   {"atomicNumber":1,"symbol":"H","name":"Hydrogen","atomicMass":"1.00794(4)","cpkHexColor":"FFFFFF","electronicConfiguration":"1s1","electronegativity":2.2,"atomicRadius":37,"ionRadius":"","vanDelWaalsRadius":120,"ionizationEnergy":1312,"electronAffinity":-73,"oxidationStates":"-1, 1","standardState":"gas","bondingType":"diatomic","meltingPoint":14,"boilingPoint":20,"density":0.0000899,"groupBlock":"nonmetal","yearDiscovered":1766},
   {"atomicNumber":2,"symbol":"He","name":"Helium","atomicMass":"4.002602(2)","cpkHexColor":"D9FFFF","electronicConfiguration":"1s2","electronegativity":"","atomicRadius":32,"ionRadius":"","vanDelWaalsRadius":140,"ionizationEnergy":2372,"electronAffinity":0,"oxidationStates":"","standardState":"gas","bondingType":"atomic","meltingPoint":"","boilingPoint":4,"density":0.0001785,"groupBlock":"noble gas","yearDiscovered":1868},
@@ -135,13 +137,6 @@ const periodicTable = [
 //   })
 // }
 
-// const helium = new Element("Helium", "He", 2)
-
-// // type the abbrieviation
-
-// if (typed === helium.name) {
-//   score++
-// }
 
 // 
 // Testing functions from index.js files
@@ -169,23 +164,78 @@ const periodicTable = [
 //   }
 
 // 
-// How to get part of the array
+// How to get part of the array       // need to check how to remove after each use
 // 
 const easyPart = []
 for (i = 0; i < 25 ; i++) {
   easyPart.push(periodicTable[i]);
 }
 
+// Globals 
+let time = 5;
+let score = 0;
+let isPlaying;
+
+const wordInput = document.querySelector("#word-input")
+const scoreDisplay = document.querySelector("#score")
+const message = document.querySelector("#message")
+const seconds = document.querySelector("#seconds")
+const currentSymbol = document.querySelector("#current-symbol")
+const timerDisplay = document.querySelector("#time")
+
+
+// Starting the game
 function init() {
+  // Load words from array
   showSymbol();
+  // Start matching symbols and words
+  wordInput.addEventListener("input", startMatch)
+  // Call countdown every second
+  setInterval(timer, 1000)
+  // Check if game is still being played
+  setInterval(checkStatus, 50)
 }
 
-const currentSymbol = document.getElementById("#current-symbol");
+// Start matching
+function startMatch() {
+  if(matchElement()) {
+    console.log(Match)
+  }
+}
+
+// Match current symbol to word input
+function matchElement() {
+  if(wordInput.value === currentSymbol.value) {
+    message.innerHTML = "Correct";
+    return true;
+  } else {
+    message.innerHTML = "";
+    return false;
+}}
 
 // Pick and show random words
-function showSymbol(symbols) {
+function showSymbol() {
   //  Generate random array index
   let randIndex = Math.floor(Math.random() * easyPart.length);
   // Output random symbol
-  console.log((easyPart[randIndex]["symbol"]));
+  currentSymbol.innerHTML = (easyPart[randIndex]["symbol"]);
+}
+
+// Countdown time
+function timer() {
+  // Check time has not ran out
+  if (time > 0) {
+    // Decrease by one
+    time= time - 1;
+  } else if (time === 0) {
+    // Game over
+    isPlaying = false;
+  }
+  timerDisplay.innerHTML = time;
+}
+
+function checkStatus() {
+  if (isPlaying === false && time === 0) {
+    message.innerHTML = "Game over"
+  }
 }
