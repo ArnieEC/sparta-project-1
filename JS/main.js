@@ -201,8 +201,13 @@ function init() {
 // Matching starting
 function startMatch() {
   if(matchElement()) {
-    console.log("Match")
+    isPlaying = true;
+    time = 10;
+    showSymbol();
+    wordInput.value = "";
+    score = score + 1;
   }
+  scoreDisplay.innerHTML = score;
 }
 
 // Match current symbol to word input
@@ -236,6 +241,7 @@ function timer() {
 
 function checkStatus() {
   if (isPlaying === false && time === 0) {
-    message.innerHTML = "Game over"
+    message.innerHTML = "Game over";
+    score = 0;
   }
 }
