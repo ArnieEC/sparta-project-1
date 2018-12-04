@@ -176,13 +176,15 @@ let time = 10;
 let score = 0;
 let isPlaying;
 
+// DOM links
 const wordInput = document.querySelector("#word-input")
 const scoreDisplay = document.querySelector("#score")
 const message = document.querySelector("#message")
 const seconds = document.querySelector("#seconds")
 const currentSymbol = document.querySelector("#current-symbol")
 const timerDisplay = document.querySelector("#time")
-
+//  Generate random array index
+let randIndex = Math.floor(Math.random() * easyPart.length);
 
 // Starting the game
 function init() {
@@ -196,7 +198,7 @@ function init() {
   setInterval(checkStatus, 50);
 }
 
-// Start matching
+// Matching starting
 function startMatch() {
   if(matchElement()) {
     console.log("Match")
@@ -205,7 +207,7 @@ function startMatch() {
 
 // Match current symbol to word input
 function matchElement() {
-  if(wordInput.value === currentSymbol.innerHTML) {
+  if(wordInput.value === easyPart[randIndex]["name"]) {
     message.innerHTML = "Correct";
     return true;
   } else {
@@ -215,8 +217,6 @@ function matchElement() {
 
 // Pick and show random words
 function showSymbol() {
-  //  Generate random array index
-  let randIndex = Math.floor(Math.random() * easyPart.length);
   // Output random symbol
   currentSymbol.innerHTML = (easyPart[randIndex]["symbol"]);
 }
