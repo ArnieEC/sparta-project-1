@@ -167,7 +167,7 @@ const periodicTable = [
 // How to get part of the array       // need to check how to remove after each use
 // 
 const easyPart = []
-for (i = 0; i < 25 ; i++) {
+for (i = 0; i < 5 ; i++) {
   easyPart.push(periodicTable[i]);
 }
 
@@ -183,8 +183,11 @@ const message = document.querySelector("#message")
 const seconds = document.querySelector("#seconds")
 const currentSymbol = document.querySelector("#current-symbol")
 const timerDisplay = document.querySelector("#time")
+
 //  Generate random array index
-let randIndex = Math.floor(Math.random() * easyPart.length);
+function randIndex() {
+  return (Math.floor(Math.random() * easyPart.length))
+}
 
 // Starting the game
 function init() {
@@ -201,9 +204,13 @@ function init() {
 // Matching starting
 function startMatch() {
   if(matchElement()) {
+    // continue game
     isPlaying = true;
+    // resets time - might need + 1
     time = 10;
+    // SHOULD show a new symbol and require a new input
     showSymbol();
+    // reset input box
     wordInput.value = "";
     score = score + 1;
   }
@@ -212,7 +219,7 @@ function startMatch() {
 
 // Match current symbol to word input
 function matchElement() {
-  if(wordInput.value === easyPart[randIndex]["name"]) {
+  if(wordInput.value === easyPart[x]["name"]) {
     message.innerHTML = "Correct";
     return true;
   } else {
@@ -220,10 +227,13 @@ function matchElement() {
     return false;
 }}
 
+x = randIndex()
+
 // Pick and show random words
 function showSymbol() {
   // Output random symbol
-  currentSymbol.innerHTML = (easyPart[randIndex]["symbol"]);
+ 
+  currentSymbol.innerHTML = (easyPart[x]["symbol"]);
 }
 
 // Countdown time
@@ -241,6 +251,7 @@ function timer() {
 
 function checkStatus() {
   if (isPlaying === false && time === 0) {
+    // 
     message.innerHTML = "Game over";
     score = 0;
   }
