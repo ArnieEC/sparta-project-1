@@ -167,7 +167,7 @@ const periodicTable = [
 // How to get part of the array       // need to check how to remove after each use
 // 
 const easyPart = []
-for (i = 0; i < 5 ; i++) {
+for (i = 0; i < 20 ; i++) {
   easyPart.push(periodicTable[i]);
 }
 
@@ -203,7 +203,7 @@ function init() {
 
 // Matching starting
 function startMatch() {
-  if(matchElement()) {
+  if(matchElement() && easyPart.length > 0) {
     // continue game
     isPlaying = true;
     // resets time - might need + 1
@@ -213,26 +213,27 @@ function startMatch() {
     // reset input box
     wordInput.value = "";
     score = score + 1;
+  } else if(easyPart.length === 0){
+    alert("You win!");
   }
   scoreDisplay.innerHTML = score;
 }
 
 // Match current symbol to word input
 function matchElement() {
-  if(wordInput.value === easyPart[x]["name"]) {
+  if(wordInput.value.toLowerCase === easyPart[x]["name"]) {
     message.innerHTML = "Correct";
+    easyPart.splice(x, 1)
     return true;
   } else {
     message.innerHTML = "";
     return false;
 }}
 
-x = randIndex()
-
 // Pick and show random words
 function showSymbol() {
   // Output random symbol
- 
+  x = randIndex()
   currentSymbol.innerHTML = (easyPart[x]["symbol"]);
 }
 
@@ -251,8 +252,8 @@ function timer() {
 
 function checkStatus() {
   if (isPlaying === false && time === 0) {
-    // 
-    message.innerHTML = "Game over";
+    // Game over message
+    message.innerHTML = "Game over, enter element name to play again";
     score = 0;
   }
 }
