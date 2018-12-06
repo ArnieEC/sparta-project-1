@@ -1,5 +1,9 @@
 // window.addEventListener("load", init)
 
+function refreshPage(){
+  window.location.reload();
+} 
+
 const periodicTable = [
   {"atomicNumber":1,"symbol":"H","name":"Hydrogen","atomicMass":"1.00794(4)","cpkHexColor":"FFFFFF","electronicConfiguration":"1s1","electronegativity":2.2,"atomicRadius":37,"ionRadius":"","vanDelWaalsRadius":120,"ionizationEnergy":1312,"electronAffinity":-73,"oxidationStates":"-1, 1","standardState":"gas","bondingType":"diatomic","meltingPoint":14,"boilingPoint":20,"density":0.0000899,"groupBlock":"nonmetal","yearDiscovered":1766},
   {"atomicNumber":2,"symbol":"He","name":"Helium","atomicMass":"4.002602(2)","cpkHexColor":"D9FFFF","electronicConfiguration":"1s2","electronegativity":"","atomicRadius":32,"ionRadius":"","vanDelWaalsRadius":140,"ionizationEnergy":2372,"electronAffinity":0,"oxidationStates":"","standardState":"gas","bondingType":"atomic","meltingPoint":"","boilingPoint":4,"density":0.0001785,"groupBlock":"noble gas","yearDiscovered":1868},
@@ -166,15 +170,13 @@ const periodicTable = [
 // 
 // How to get part of the array       // need to check how to remove after each use
 // 
-const easyPart = []
-for (i = 0; i < 4 ; i++) {
-  easyPart.push(periodicTable[i]);
-}
+// const easyPart = []
+// for (i = 0; i < 4 ; i++) {
+//   easyPart.push(periodicTable[i]);
+// }
 
 let questions = [];
 let diff;
-
-
 
 function selectDifficulty() {
   questions = [];
@@ -182,37 +184,30 @@ function selectDifficulty() {
     for (i = 0; i < 5 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   } else if (diff === 2){
     for (i = 0; i < 10 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   } else if (diff === 3){
     for (i = 0; i < 20 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   } else if (diff === 4){
     for (i = 0; i < 35 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   } else if (diff === 5){
     for (i = 0; i < 50 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   } else if (diff === 6){
     for (i = 0; i < 75 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   } else if (diff === 7){
     for (i = 0; i < 118 ; i++) {
       questions.push(periodicTable[i]);
     }
-    console.log(questions)
   }
 }
 
@@ -239,6 +234,7 @@ const newbieButton = document.getElementById("buttonNewbie").addEventListener("c
   diff = 1;
   selectDifficulty()
   init();
+  time = 10
 })
 const basicButton = document.getElementById("buttonElementary").addEventListener("click", () => {
   diff = 2
@@ -281,7 +277,7 @@ function init() {
   // Call countdown every second
   setInterval(timer, 1000);
   // Check if game is still being played
-  setInterval(checkStatus, 50);
+  setInterval(checkStatus, 1000);
 }
 
 // Matching starting
@@ -295,11 +291,16 @@ function startMatch() {
     showSymbol();
     // reset input box
     wordInput.value = "";
-    score = score + 10;
+    score = score + 1;
   } else if(questions.length === 0){
+    myStopFunction(setInterval)
     alert("You win!");
   }
   scoreDisplay.innerHTML = score;
+}
+
+function myStopFunction() {
+  clearTimeout();
 }
 
 // Match current symbol to word input
@@ -324,20 +325,25 @@ function showSymbol() {
 // Countdown time
 function timer() {
   // Check time has not ran out
-  if (time > 0) {
+  if (time > -1) {
     // Decrease by one
     time= time - 1;
-  } else if (time <= 0 && score > 0) {
-    // lose a point
-    score --;
+    timerDisplay.innerHTML = time;
+  }  if (time <= 0) {
+    timerDisplay.innerHTML = 0;
   }
-  timerDisplay.innerHTML = time;
+  
 }
 
+// 
+// WHY DOES BELOW NOT WORK ***********************************************************************************
+// 
+
 function checkStatus() {
-  if (isPlaying === false && time === 0) {
+  if (time == 0) {
     // Game over message
     message.innerHTML = "Game over, enter element name to play again";
+    score = score - 1 ;
   }
 }
 
@@ -345,3 +351,5 @@ function checkStatus() {
 // Timer fix
 // Styling
 // If time allows - Local Storage! (to create leaderboards)
+
+

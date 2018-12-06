@@ -8,20 +8,31 @@
   <link rel="stylesheet" type="text/css" media="screen" href="/CSS/main.css" />
 </head>
 <body>
-  <h1 id="current-symbol"></h1>
-  <div>
-    <input id="word-input" autofocus>
-    <p id="message"></p>
-    <h2>Timer: <span id="time">0</span></h2>
-    <h2>Score: <span id="score">0</span></h2>
-    <button id="buttonNewbie">Newbie</button>
-    <button id="buttonElementary">Elementary</button>
-    <button id="buttonBasic">Basic</button>
-    <button id="buttonRegular">Regular</button>
-    <button id="buttonHard">Hard</button>
-    <button id="buttonVeryHard">Very Hard</button>
-    <button id="buttonExtreme">Extreme</button>
+  <div class="row">
+  <div class="col-lg-3">
+    <div>
+      <ul>
+        <li><button id="buttonNewbie">Newbie</button></li>
+        <li><button id="buttonElementary">Elementary</button></li>
+        <li><button id="buttonBasic">Basic</button></li>
+        <li><button id="buttonRegular">Regular</button></li>
+        <li><button id="buttonHard">Hard</button></li>
+        <li><button id="buttonVeryHard">Very Hard</button></li>
+        <li><button id="buttonExtreme">Extreme</button></li>
+      </ul>
+    </div>
   </div>
+  <div class="col-lg-6">
+    <div>
+      <h1 id="current-symbol"></h1>
+      <input id="word-input" autofocus>
+      <p id="message"></p>
+      <h2 id="test">Timer: <span id="time">0</span></h2>
+      <h2>Score: <span id="score">0</span></h2>
+    </div>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
   <div id="test"></div>
     <script src="/JS/main.js"></script>
 </body>
