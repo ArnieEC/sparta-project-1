@@ -1,4 +1,4 @@
-window.addEventListener("load", init)
+// window.addEventListener("load", init)
 
 const periodicTable = [
   {"atomicNumber":1,"symbol":"H","name":"Hydrogen","atomicMass":"1.00794(4)","cpkHexColor":"FFFFFF","electronicConfiguration":"1s1","electronegativity":2.2,"atomicRadius":37,"ionRadius":"","vanDelWaalsRadius":120,"ionizationEnergy":1312,"electronAffinity":-73,"oxidationStates":"-1, 1","standardState":"gas","bondingType":"diatomic","meltingPoint":14,"boilingPoint":20,"density":0.0000899,"groupBlock":"nonmetal","yearDiscovered":1766},
@@ -167,9 +167,55 @@ const periodicTable = [
 // How to get part of the array       // need to check how to remove after each use
 // 
 const easyPart = []
-for (i = 0; i < 20 ; i++) {
+for (i = 0; i < 4 ; i++) {
   easyPart.push(periodicTable[i]);
 }
+
+let questions = [];
+let diff;
+
+
+
+function selectDifficulty() {
+  questions = [];
+  if (diff === 1) {
+    for (i = 0; i < 5 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  } else if (diff === 2){
+    for (i = 0; i < 10 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  } else if (diff === 3){
+    for (i = 0; i < 20 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  } else if (diff === 4){
+    for (i = 0; i < 35 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  } else if (diff === 5){
+    for (i = 0; i < 50 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  } else if (diff === 6){
+    for (i = 0; i < 75 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  } else if (diff === 7){
+    for (i = 0; i < 118 ; i++) {
+      questions.push(periodicTable[i]);
+    }
+    console.log(questions)
+  }
+}
+
 
 // Globals 
 let time = 10;
@@ -186,8 +232,45 @@ const timerDisplay = document.querySelector("#time")
 
 //  Generate random array index
 function randIndex() {
-  return (Math.floor(Math.random() * easyPart.length))
+  return (Math.floor(Math.random() * questions.length))
 }
+
+const newbieButton = document.getElementById("buttonNewbie").addEventListener("click", () =>{
+  diff = 1;
+  selectDifficulty()
+  init();
+})
+const basicButton = document.getElementById("buttonElementary").addEventListener("click", () => {
+  diff = 2
+  selectDifficulty()
+  init()
+})
+const elementaryButton = document.getElementById("buttonBasic").addEventListener("click", () => {
+  diff = 3
+  selectDifficulty()
+  init()
+})
+const regularButton = document.getElementById("buttonRegular").addEventListener("click", () => {
+  diff = 4
+  selectDifficulty()
+  init()
+})
+const hardButton = document.getElementById("buttonHard").addEventListener("click", () => {
+  diff = 5
+  selectDifficulty()
+  init()
+})
+const veryHardButton = document.getElementById("buttonVeryHard").addEventListener("click", () => {
+  diff = 6
+  selectDifficulty()
+  init()
+})
+const extremeButton = document.getElementById("buttonExtreme").addEventListener("click", () => {
+  diff = 7
+  selectDifficulty()
+  init()
+})
+
 
 // Starting the game
 function init() {
@@ -203,7 +286,7 @@ function init() {
 
 // Matching starting
 function startMatch() {
-  if(matchElement() && easyPart.length > 0) {
+  if(matchElement() && questions.length > 0) {
     // continue game
     isPlaying = true;
     // resets time - might need + 1
@@ -212,8 +295,8 @@ function startMatch() {
     showSymbol();
     // reset input box
     wordInput.value = "";
-    score = score + 1;
-  } else if(easyPart.length === 0){
+    score = score + 10;
+  } else if(questions.length === 0){
     alert("You win!");
   }
   scoreDisplay.innerHTML = score;
@@ -221,9 +304,9 @@ function startMatch() {
 
 // Match current symbol to word input
 function matchElement() {
-  if(wordInput.value.toLowerCase === easyPart[x]["name"]) {
+  if(wordInput.value === questions[x]["name"]) {
     message.innerHTML = "Correct";
-    easyPart.splice(x, 1)
+    questions.splice(x, 1)
     return true;
   } else {
     message.innerHTML = "";
@@ -232,9 +315,10 @@ function matchElement() {
 
 // Pick and show random words
 function showSymbol() {
+  // Set random index function to the same in both functions
+  x = randIndex();
   // Output random symbol
-  x = randIndex()
-  currentSymbol.innerHTML = (easyPart[x]["symbol"]);
+  currentSymbol.innerHTML = (questions[x]["symbol"]);
 }
 
 // Countdown time
@@ -243,9 +327,9 @@ function timer() {
   if (time > 0) {
     // Decrease by one
     time= time - 1;
-  } else if (time === 0) {
-    // Game over
-    isPlaying = false;
+  } else if (time <= 0 && score > 0) {
+    // lose a point
+    score --;
   }
   timerDisplay.innerHTML = time;
 }
@@ -254,6 +338,10 @@ function checkStatus() {
   if (isPlaying === false && time === 0) {
     // Game over message
     message.innerHTML = "Game over, enter element name to play again";
-    score = 0;
   }
 }
+
+// Difficulty
+// Timer fix
+// Styling
+// If time allows - Local Storage! (to create leaderboards)
