@@ -1,5 +1,3 @@
-// window.addEventListener("load", init)
-
 function refreshPage(){
   window.location.reload();
 } 
@@ -17,10 +15,10 @@ const periodicTable = [
   {"atomicNumber":10,"symbol":"Ne","name":"Neon","atomicMass":"20.1797(6)","cpkHexColor":"B3E3F5","electronicConfiguration":"[He] 2s2 2p6","electronegativity":"","atomicRadius":69,"ionRadius":"","vanDelWaalsRadius":154,"ionizationEnergy":2081,"electronAffinity":0,"oxidationStates":"","standardState":"gas","bondingType":"atomic","meltingPoint":25,"boilingPoint":27,"density":0.0009,"groupBlock":"noble gas","yearDiscovered":1898},
   {"atomicNumber":11,"symbol":"Na","name":"Sodium","atomicMass":"22.98976928(2)","cpkHexColor":"AB5CF2","electronicConfiguration":"[Ne] 3s1","electronegativity":0.93,"atomicRadius":154,"ionRadius":"102 (+1)","vanDelWaalsRadius":227,"ionizationEnergy":496,"electronAffinity":-53,"oxidationStates":"-1, 1","standardState":"solid","bondingType":"metallic","meltingPoint":371,"boilingPoint":1156,"density":0.968,"groupBlock":"alkali metal","yearDiscovered":1807},
   {"atomicNumber":12,"symbol":"Mg","name":"Magnesium","atomicMass":"24.3050(6)","cpkHexColor":"8AFF00","electronicConfiguration":"[Ne] 3s2","electronegativity":1.31,"atomicRadius":130,"ionRadius":"72 (+2)","vanDelWaalsRadius":173,"ionizationEnergy":738,"electronAffinity":0,"oxidationStates":"1, 2","standardState":"solid","bondingType":"metallic","meltingPoint":923,"boilingPoint":1363,"density":1.738,"groupBlock":"alkaline earth metal","yearDiscovered":1808},
-  {"atomicNumber":13,"symbol":"Al","name":"Aluminum","atomicMass":"26.9815386(8)","cpkHexColor":"BFA6A6","electronicConfiguration":"[Ne] 3s2 3p1","electronegativity":1.61,"atomicRadius":118,"ionRadius":"53.5 (+3)","vanDelWaalsRadius":"","ionizationEnergy":578,"electronAffinity":-43,"oxidationStates":"1, 3","standardState":"solid","bondingType":"metallic","meltingPoint":933,"boilingPoint":2792,"density":2.7,"groupBlock":"metal","yearDiscovered":"Ancient"},
+  {"atomicNumber":13,"symbol":"Al","name":"Aluminium","atomicMass":"26.9815386(8)","cpkHexColor":"BFA6A6","electronicConfiguration":"[Ne] 3s2 3p1","electronegativity":1.61,"atomicRadius":118,"ionRadius":"53.5 (+3)","vanDelWaalsRadius":"","ionizationEnergy":578,"electronAffinity":-43,"oxidationStates":"1, 3","standardState":"solid","bondingType":"metallic","meltingPoint":933,"boilingPoint":2792,"density":2.7,"groupBlock":"metal","yearDiscovered":"Ancient"},
   {"atomicNumber":14,"symbol":"Si","name":"Silicon","atomicMass":"28.0855(3)","cpkHexColor":"F0C8A0","electronicConfiguration":"[Ne] 3s2 3p2","electronegativity":1.9,"atomicRadius":111,"ionRadius":"40 (+4)","vanDelWaalsRadius":210,"ionizationEnergy":787,"electronAffinity":-134,"oxidationStates":"-4, -3, -2, -1, 1, 2, 3, 4","standardState":"solid","bondingType":"metallic","meltingPoint":1687,"boilingPoint":3173,"density":2.33,"groupBlock":"metalloid","yearDiscovered":1854},
   {"atomicNumber":15,"symbol":"P","name":"Phosphorus","atomicMass":"30.973762(2)","cpkHexColor":"FF8000","electronicConfiguration":"[Ne] 3s2 3p3","electronegativity":2.19,"atomicRadius":106,"ionRadius":"44 (+3)","vanDelWaalsRadius":180,"ionizationEnergy":1012,"electronAffinity":-72,"oxidationStates":"-3, -2, -1, 1, 2, 3, 4, 5","standardState":"solid","bondingType":"covalent network","meltingPoint":317,"boilingPoint":554,"density":1.823,"groupBlock":"nonmetal","yearDiscovered":1669},
-  {"atomicNumber":16,"symbol":"S","name":"Sulfur","atomicMass":"32.065(5)","cpkHexColor":"FFFF30","electronicConfiguration":"[Ne] 3s2 3p4","electronegativity":2.58,"atomicRadius":102,"ionRadius":"184 (-2)","vanDelWaalsRadius":180,"ionizationEnergy":1000,"electronAffinity":-200,"oxidationStates":"-2, -1, 1, 2, 3, 4, 5, 6","standardState":"solid","bondingType":"covalent network","meltingPoint":388,"boilingPoint":718,"density":1.96,"groupBlock":"nonmetal","yearDiscovered":"Ancient"},
+  {"atomicNumber":16,"symbol":"S","name":"Sulphur","atomicMass":"32.065(5)","cpkHexColor":"FFFF30","electronicConfiguration":"[Ne] 3s2 3p4","electronegativity":2.58,"atomicRadius":102,"ionRadius":"184 (-2)","vanDelWaalsRadius":180,"ionizationEnergy":1000,"electronAffinity":-200,"oxidationStates":"-2, -1, 1, 2, 3, 4, 5, 6","standardState":"solid","bondingType":"covalent network","meltingPoint":388,"boilingPoint":718,"density":1.96,"groupBlock":"nonmetal","yearDiscovered":"Ancient"},
   {"atomicNumber":17,"symbol":"Cl","name":"Chlorine","atomicMass":"35.453(2)","cpkHexColor":"1FF01F","electronicConfiguration":"[Ne] 3s2 3p5","electronegativity":3.16,"atomicRadius":99,"ionRadius":"181 (-1)","vanDelWaalsRadius":175,"ionizationEnergy":1251,"electronAffinity":-349,"oxidationStates":"-1, 1, 2, 3, 4, 5, 6, 7","standardState":"gas","bondingType":"covalent network","meltingPoint":172,"boilingPoint":239,"density":0.003214,"groupBlock":"halogen","yearDiscovered":1774},
   {"atomicNumber":18,"symbol":"Ar","name":"Argon","atomicMass":"39.948(1)","cpkHexColor":"80D1E3","electronicConfiguration":"[Ne] 3s2 3p6","electronegativity":"","atomicRadius":97,"ionRadius":"","vanDelWaalsRadius":188,"ionizationEnergy":1521,"electronAffinity":0,"oxidationStates":"","standardState":"gas","bondingType":"atomic","meltingPoint":84,"boilingPoint":87,"density":0.001784,"groupBlock":"noble gas","yearDiscovered":1894},
   {"atomicNumber":19,"symbol":"K","name":"Potassium","atomicMass":"39.0983(1)","cpkHexColor":"8F40D4","electronicConfiguration":"[Ar] 4s1","electronegativity":0.82,"atomicRadius":196,"ionRadius":"138 (+1)","vanDelWaalsRadius":275,"ionizationEnergy":419,"electronAffinity":-48,"oxidationStates":1,"standardState":"solid","bondingType":"metallic","meltingPoint":337,"boilingPoint":1032,"density":0.856,"groupBlock":"alkali metal","yearDiscovered":1807},
@@ -59,7 +57,7 @@ const periodicTable = [
   {"atomicNumber":52,"symbol":"Te","name":"Tellurium","atomicMass":"127.60(3)","cpkHexColor":"D47A00","electronicConfiguration":"[Kr] 4d10 5s2 5p4","electronegativity":2.1,"atomicRadius":135,"ionRadius":"221 (-2)","vanDelWaalsRadius":206,"ionizationEnergy":869,"electronAffinity":-190,"oxidationStates":"-2, 2, 4, 5, 6","standardState":"solid","bondingType":"metallic","meltingPoint":723,"boilingPoint":1261,"density":6.24,"groupBlock":"metalloid","yearDiscovered":1782},
   {"atomicNumber":53,"symbol":"I","name":"Iodine","atomicMass":"126.90447(3)","cpkHexColor":940094,"electronicConfiguration":"[Kr] 4d10 5s2 5p5","electronegativity":2.66,"atomicRadius":133,"ionRadius":"220 (-1)","vanDelWaalsRadius":198,"ionizationEnergy":1008,"electronAffinity":-295,"oxidationStates":"-1, 1, 3, 5, 7","standardState":"solid","bondingType":"covalent network","meltingPoint":387,"boilingPoint":457,"density":4.94,"groupBlock":"halogen","yearDiscovered":1811},
   {"atomicNumber":54,"symbol":"Xe","name":"Xenon","atomicMass":"131.293(6)","cpkHexColor":"429EB0","electronicConfiguration":"[Kr] 4d10 5s2 5p6","electronegativity":"","atomicRadius":130,"ionRadius":"48 (+8)","vanDelWaalsRadius":216,"ionizationEnergy":1170,"electronAffinity":0,"oxidationStates":"2, 4, 6, 8","standardState":"gas","bondingType":"atomic","meltingPoint":161,"boilingPoint":165,"density":0.0059,"groupBlock":"noble gas","yearDiscovered":1898},
-  {"atomicNumber":55,"symbol":"Cs","name":"Cesium","atomicMass":"132.9054519(2)","cpkHexColor":"57178F","electronicConfiguration":"[Xe] 6s1","electronegativity":0.79,"atomicRadius":225,"ionRadius":"167 (+1)","vanDelWaalsRadius":"","ionizationEnergy":376,"electronAffinity":-46,"oxidationStates":1,"standardState":"solid","bondingType":"metallic","meltingPoint":302,"boilingPoint":944,"density":1.879,"groupBlock":"alkali metal","yearDiscovered":1860},
+  {"atomicNumber":55,"symbol":"Cs","name":"Caesium","atomicMass":"132.9054519(2)","cpkHexColor":"57178F","electronicConfiguration":"[Xe] 6s1","electronegativity":0.79,"atomicRadius":225,"ionRadius":"167 (+1)","vanDelWaalsRadius":"","ionizationEnergy":376,"electronAffinity":-46,"oxidationStates":1,"standardState":"solid","bondingType":"metallic","meltingPoint":302,"boilingPoint":944,"density":1.879,"groupBlock":"alkali metal","yearDiscovered":1860},
   {"atomicNumber":56,"symbol":"Ba","name":"Barium","atomicMass":"137.327(7)","cpkHexColor":"00C900","electronicConfiguration":"[Xe] 6s2","electronegativity":0.89,"atomicRadius":198,"ionRadius":"135 (+2)","vanDelWaalsRadius":"","ionizationEnergy":503,"electronAffinity":-14,"oxidationStates":2,"standardState":"solid","bondingType":"metallic","meltingPoint":1000,"boilingPoint":2143,"density":3.51,"groupBlock":"alkaline earth metal","yearDiscovered":1808},
   {"atomicNumber":57,"symbol":"La","name":"Lanthanum","atomicMass":"138.90547(7)","cpkHexColor":"70D4FF","electronicConfiguration":"[Xe] 5d1 6s2","electronegativity":1.1,"atomicRadius":169,"ionRadius":"103.2 (+3)","vanDelWaalsRadius":"","ionizationEnergy":538,"electronAffinity":-48,"oxidationStates":"2, 3","standardState":"solid","bondingType":"metallic","meltingPoint":1193,"boilingPoint":3737,"density":6.146,"groupBlock":"lanthanoid","yearDiscovered":1839},
   {"atomicNumber":58,"symbol":"Ce","name":"Cerium","atomicMass":"140.116(1)","cpkHexColor":"FFFFC7","electronicConfiguration":"[Xe] 4f1 5d1 6s2","electronegativity":1.12,"atomicRadius":"","ionRadius":"102 (+3)","vanDelWaalsRadius":"","ionizationEnergy":534,"electronAffinity":-50,"oxidationStates":"2, 3, 4","standardState":"solid","bondingType":"metallic","meltingPoint":1071,"boilingPoint":3633,"density":6.689,"groupBlock":"lanthanoid","yearDiscovered":1803},
@@ -123,60 +121,21 @@ const periodicTable = [
   {"atomicNumber":116,"symbol":"Lv","name":"Livermorium","atomicMass":[293],"cpkHexColor":"","electronicConfiguration":"[Rn] 5f14 6d10 7s2 7p4","electronegativity":"","atomicRadius":"","ionRadius":"","vanDelWaalsRadius":"","ionizationEnergy":"","electronAffinity":"","oxidationStates":"","standardState":"","bondingType":"","meltingPoint":"","boilingPoint":"","density":"","groupBlock":"post-transition metal","yearDiscovered":2000},
   {"atomicNumber":117,"symbol":"Ts","name":"Tennessine","atomicMass":[294],"cpkHexColor":"","electronicConfiguration":"[Rn] 5f14 6d10 7s2 7p5","electronegativity":"","atomicRadius":"","ionRadius":"","vanDelWaalsRadius":"","ionizationEnergy":"","electronAffinity":"","oxidationStates":"","standardState":"","bondingType":"","meltingPoint":"","boilingPoint":"","density":"","groupBlock":"post-transition metal","yearDiscovered":2010},
   {"atomicNumber":118,"symbol":"Og","name":"Oganesson","atomicMass":[294],"cpkHexColor":"","electronicConfiguration":"[Rn] 5f14 6d10 7s2 7p6","electronegativity":"","atomicRadius":"","ionRadius":"","vanDelWaalsRadius":"","ionizationEnergy":"","electronAffinity":"","oxidationStates":"","standardState":"","bondingType":"","meltingPoint":"","boilingPoint":"","density":"","groupBlock":"noble gas","yearDiscovered":2002}
-  ]
-
-// 
-// Initial thoughts on the project
-// 
-
-// const allElements = data
-
-
-// for (let i = 0; i < allElements.length; i++) {
-//   periodicTable.push({
-//     name: allElements.name[i],
-//     symbol: allElements.symbol[i],
-//     atomicNumber: allElements.atomicNumber[i],
-//     atomicMass: allElements.atomicMass[i]
-//   })
-// }
-
-
-// 
-// Testing functions from index.js files
-// 
-
-
-// let ((periodicTable[]), "atomicNumber") = i
-// for (let i = 0; i<10; i++){
-//   if (periodicTable.atomicNumber === i) {
-//     alert((periodicTable[i])["symbol"])
-// }
-// }
-
-
-// 
-// how to do a static check
-// 
-
-// function check() {
-//   var a=document.getElementById("check");
-//   if((a.value==((periodicTable[i])["name"]))) {
-//     document.getElementById('err').innerHTML= "Correct";
-//   } else {
-//     document.getElementById('err').innerHTML= "Wrong";
-//   }
-
-// 
-// How to get part of the array       // need to check how to remove after each use
-// 
-// const easyPart = []
-// for (i = 0; i < 4 ; i++) {
-//   easyPart.push(periodicTable[i]);
-// }
-
+]
+// Globals 
+let time;
+let score = 0;
+let isPlaying;
 let questions = [];
 let diff;
+
+// DOM links
+const wordInput = document.querySelector("#word-input")
+const scoreDisplay = document.querySelector("#score")
+const message = document.querySelector("#message")
+const seconds = document.querySelector("#seconds")
+const currentSymbol = document.querySelector("#current-symbol")
+const timerDisplay = document.querySelector("#time")
 
 function selectDifficulty() {
   questions = [];
@@ -212,101 +171,101 @@ function selectDifficulty() {
 }
 
 
-// Globals 
-let time = 10;
-let score = 0;
-let isPlaying;
-
-// DOM links
-const wordInput = document.querySelector("#word-input")
-const scoreDisplay = document.querySelector("#score")
-const message = document.querySelector("#message")
-const seconds = document.querySelector("#seconds")
-const currentSymbol = document.querySelector("#current-symbol")
-const timerDisplay = document.querySelector("#time")
 
 //  Generate random array index
 function randIndex() {
   return (Math.floor(Math.random() * questions.length))
 }
 
+// Difficulty selector, starts game, sets time and resets score
 const newbieButton = document.getElementById("buttonNewbie").addEventListener("click", () =>{
   diff = 1;
-  selectDifficulty()
-  init();
-  time = 10
+  selectDifficulty();
+  time = 11;
+  score = 0;
 })
 const basicButton = document.getElementById("buttonElementary").addEventListener("click", () => {
-  diff = 2
-  selectDifficulty()
-  init()
+  diff = 2;
+  selectDifficulty();
+  time = 21;
+  score = 0;
 })
 const elementaryButton = document.getElementById("buttonBasic").addEventListener("click", () => {
-  diff = 3
-  selectDifficulty()
-  init()
+  diff = 3;
+  selectDifficulty();
+  time = 41;
+  score = 0;
 })
 const regularButton = document.getElementById("buttonRegular").addEventListener("click", () => {
   diff = 4
-  selectDifficulty()
-  init()
+  selectDifficulty();
+  time = 71;
+  score = 0;
 })
 const hardButton = document.getElementById("buttonHard").addEventListener("click", () => {
-  diff = 5
-  selectDifficulty()
-  init()
+  diff = 5;
+  selectDifficulty();
+  time = 101;
+  score = 0;
 })
 const veryHardButton = document.getElementById("buttonVeryHard").addEventListener("click", () => {
-  diff = 6
-  selectDifficulty()
-  init()
+  diff = 6;
+  selectDifficulty();
+  time = 151;
+  score = 0;
 })
 const extremeButton = document.getElementById("buttonExtreme").addEventListener("click", () => {
-  diff = 7
-  selectDifficulty()
-  init()
+  diff = 7;
+  selectDifficulty();
+  time = 201;
+  score = 0;
 })
-
+const startButton = document.getElementById("start").addEventListener("click", () => {
+  init();
+})
+const resetButton = document.getElementById("reset").addEventListener("click", () => {
+  window.location.reload();
+})
 
 // Starting the game
 function init() {
+  // Focus the input without a click!
+  document.getElementById("word-input").focus();
   // Load words from array
   showSymbol();
   // Start matching symbols and words
   wordInput.addEventListener("input", startMatch);
   // Call countdown every second
-  setInterval(timer, 1000);
+  let interval = setInterval(timer, 1000);
+  interval;
   // Check if game is still being played
   setInterval(checkStatus, 1000);
 }
 
 // Matching starting
 function startMatch() {
-  if(matchElement() && questions.length > 0) {
+  if(matchElement() && questions.length > 0 && time >= 0) {
     // continue game
     isPlaying = true;
-    // resets time - might need + 1
-    time = 10;
     // SHOULD show a new symbol and require a new input
     showSymbol();
     // reset input box
     wordInput.value = "";
     score = score + 1;
   } else if(questions.length === 0){
-    myStopFunction(setInterval)
-    alert("You win!");
+    message.innerHTML = "Congratulations on completing this difficulty!";
+    time = 0;
+    wordInput.value = "";
+    score = score +1;
   }
   scoreDisplay.innerHTML = score;
 }
 
-function myStopFunction() {
-  clearTimeout();
-}
-
-// Match current symbol to word input
+// Match current to word input symbol 
 function matchElement() {
   if(wordInput.value === questions[x]["name"]) {
     message.innerHTML = "Correct";
+    // replace x with nothing, removing it
     questions.splice(x, 1)
     return true;
   } else {
@@ -326,30 +285,19 @@ function showSymbol() {
 function timer() {
   // Check time has not ran out
   if (time > -1) {
-    // Decrease by one
+    // Decrease time by one and display time
     time= time - 1;
     timerDisplay.innerHTML = time;
   }  if (time <= 0) {
+    // make sure player cannot see the negative time
     timerDisplay.innerHTML = 0;
   }
-  
 }
-
-// 
-// WHY DOES BELOW NOT WORK ***********************************************************************************
-// 
 
 function checkStatus() {
-  if (time == 0) {
+  if (time === 0) {
     // Game over message
-    message.innerHTML = "Game over, enter element name to play again";
-    score = score - 1 ;
+    message.innerHTML = "Out of time! Try to research the elements you got stuck on before trying again!";
+    resetTimer();
   }
 }
-
-// Difficulty
-// Timer fix
-// Styling
-// If time allows - Local Storage! (to create leaderboards)
-
-

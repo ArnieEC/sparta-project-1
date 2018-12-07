@@ -1,7 +1,94 @@
-/* #current-symbol {
-  color: blue
-} */
-
-#test {
-  color: blue;
+body{
+  background-color: #62929E;
+  color: #393D3F;
 }
+
+#all-content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#difficulty {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#periodicTable {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+}
+
+#instructions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+li {
+  padding: 5px
+}
+
+#current-symbol {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+button {
+  width: 250px;
+  height: 35px;
+  background-color: #C6C5B9;
+  border-color: #C6C5B9;
+}
+
+p.inst{
+  padding: 20px;
+  border: #C6C5B9 5px solid;
+}
+
+#message {
+  padding-top: 30px;
+}
+
+#word-input {
+  text-align: center;
+  font-size: 30px;
+}
+
+#start {
+  margin-left: 105px;
+  margin-top: 30px;
+}
+#reset {
+  margin-left: 105px;
+}
+
+#elementPic {
+  height: 52px;
+  width: 52px;
+}
+
+#elementPic:hover { transform: scale(1.2); }
+
+#blankPic {
+  height: 52px;
+  width: 52px;
+  background-color: #62929E;
+}
+
